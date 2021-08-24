@@ -1,0 +1,384 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ant-form-item {
+    margin-bottom: 0;
+}
+
+/*header menu*/
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: transparent;
+}
+
+.ant-menu-vertical > .ant-menu-item, .ant-menu-vertical .ant-menu-item {
+    line-height: 23px;
+    height: 23px;
+    padding: 0;
+}
+
+.ant-menu-vertical .ant-menu-item:not(:last-child),
+.ant-menu-vertical-left .ant-menu-item:not(:last-child),
+.ant-menu-vertical-right .ant-menu-item:not(:last-child),
+.ant-menu-inline .ant-menu-item:not(:last-child),
+.ant-menu-vertical .ant-menu-item,
+.ant-menu-vertical-left .ant-menu-item,
+.ant-menu-vertical-right .ant-menu-item,
+.ant-menu-inline .ant-menu-item,
+.ant-menu-vertical .ant-menu-submenu-title,
+.ant-menu-vertical-left .ant-menu-submenu-title,
+.ant-menu-vertical-right .ant-menu-submenu-title,
+.ant-menu-inline .ant-menu-submenu-title {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/*registration form*/
+.ant-form-item-label label {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+    margin-top: 11px;
+}
+
+.ant-form-item-required::after {
+    display: none;
+}
+
+/*radio button registration form */
+.userType > .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    border-radius: 0;
+    background: #F3F3F3;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    color: #000000;
+    text-align: center;
+}
+
+.userType > .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+    color: black;
+    border: none;
+}
+
+.userType > .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):focus-within {
+    box-shadow: inherit;
+}
+
+/*choose mediator RadioBtn*/
+.mediatorGroup > .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    border: 2px solid #C4C4C4;
+}
+
+.mediatorGroup > .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
+    color: black;
+    border: 2px solid #C4C4C4;
+}
+
+.mediatorGroup > .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):focus-within {
+    box-shadow: inherit;
+}
+
+.mediatorGroup > .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
+    display: none;
+}
+
+.mediatorGroup > .ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper:first-child {
+    border-right: 2px solid #C4C4C4;
+}
+
+/*workBoard Tab*/
+
+.ant-tabs-top > .ant-tabs-nav::before {
+    display: none;
+}
+
+.workBoardWrapper .ant-tabs-nav-list {
+    width: 100%;
+}
+
+.workBoardWrapper .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0 0 10px 20px;
+}
+
+.workBoardWrapper .ant-tabs-tab:nth-child(4) {
+    margin-left: auto;
+    font-size: initial;
+}
+
+.workBoardWrapper .ant-tabs-tab {
+    color: #C4C4C4;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 23px;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.ant-tabs-tab {
+    color: #C4C4C4;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.ant-tabs-tab:hover {
+    color: #000000;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #000000;
+}
+
+.ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+    display: none;
+}
+
+.dateGroup.ant-input-group .ant-input {
+    width: 263px;
+}
+
+.dateGroup.ant-input:focus, .dateGroup.ant-input-focused {
+    border-color: #000000;
+    outline: none;
+}
+
+/*openDispute */
+
+.formDispute.ant-form-vertical .secondMemberField.ant-form-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.formDispute.ant-form-vertical .ant-form-item-label > label[for='openDispute_time'],
+.formDispute.ant-form-vertical .ant-form-item-label > label[for='openDispute_date'] {
+    margin-bottom: 22px;
+    display: none;
+}
+
+.formDispute.ant-form-vertical .ant-form-item-label > label[for='openDispute_secondMember'] {
+    margin: 0;
+    padding-top: 9px;
+}
+
+.formDispute.ant-form-vertical .ant-form-item-label > label {
+    margin-bottom: 10px;
+}
+
+/*.formDispute.ant-form-vertical .ant-form-item {*/
+/*    !*margin-bottom: 15px;*!*/
+/*}*/
+
+.formDispute.ant-form-vertical .ant-form-item-label, .ant-col-24.ant-form-item-label, .ant-col-xl-24.ant-form-item-label {
+    padding: 0;
+}
+
+.ant-form-item-explain.ant-form-item-explain-error, .ant-form-item-explain, .ant-form-item-extra {
+    margin: 0 0 0 auto;
+}
+
+.mediatorField .ant-form-item-control-input-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ant-checkbox-inner {
+    border: 1px solid #000000;
+    width: 27px;
+    height: 24px;
+    border-radius: 0;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner::after {
+    content: 'V';
+    color: black;
+    border: none;
+    transform: initial;
+    font-size: 14px;
+    line-height: 23px;
+    top: 0;
+    left: calc(50% - 4.5px);
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    border-color: #000000;
+    background-color: #fff;
+}
+
+.mediatorField .ant-checkbox-checked.ant-checkbox + span {
+    color: #000000;
+}
+
+.mediatorField .ant-checkbox + span {
+    color: #C4C4C4;
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-input:focus + .ant-checkbox-inner {
+    border-color: black;
+}
+
+.ant-checkbox + span {
+    margin: auto;
+}
+
+/*user Account tab*/
+.userAccountWrapper .ant-tabs > .ant-tabs-nav, .ant-tabs > div > .ant-tabs-nav {
+    flex: 1;
+    flex-grow: 1.3;
+}
+
+.userAccountWrapper .ant-tabs {
+    overflow: inherit;
+}
+
+.userAccountWrapper .ant-tabs-left > .ant-tabs-content-holder, .ant-tabs-left > div > .ant-tabs-content-holder {
+    border: none;
+    margin: 0;
+    flex: 3;
+}
+
+.userAccountWrapper .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab:nth-child(4), .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab:nth-child(4), .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab:nth-child(4), .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab:nth-child(4) {
+    margin-top: auto;
+}
+
+.userAccountWrapper .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab, .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab, .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab, .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+    padding: 0;
+}
+
+.userAccountWrapper .ant-tabs-tab {
+    padding: 0;
+    margin: 0 20px 0 0;
+}
+
+.userAccountWrapper .ant-tabs-nav-list {
+    width: 100%;
+}
+
+.userAccountWrapper .ant-tabs-tab:nth-child(4) {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+@media screen and (max-width: 640px) {
+    .formDispute.ant-form-vertical .ant-form-item-label > label[for='openDispute_secondMember'] {
+        margin-bottom: 10px;
+    }
+
+    .partnersForm.ant-form .ant-form-item .ant-form-item-label, .partnersForm.ant-form .ant-form-item .ant-form-item-control {
+        -moz-box-flex: 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: inherit;
+    }
+
+    .partnersForm .ant-form-item-label label[for='login_phone'] {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .userAccountWrapper .ant-tabs-tab {
+        font-size: 14px;
+        margin-right: 6px;
+    }
+
+    .userAccountWrapper .ant-tabs-tab:nth-child(4) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dateGroup.ant-input-group .ant-input {
+        max-width: 263px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .registrationForm.ant-form .ant-form-item .ant-form-item-label {
+        flex: 1;
+        margin: auto;
+    }
+
+    .registrationForm.ant-form .ant-form-item .ant-form-item-control {
+        flex: 2;
+    }
+}
+
+
+@media screen and (max-width: 540px) {
+    .workBoardWrapper .ant-tabs-nav-list {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .workBoardWrapper .ant-tabs-tab {
+        font-size: 16px;
+    }
+
+    .workBoardWrapper .ant-tabs-tab:nth-child(4) {
+        margin-left: 0;
+        margin-right: 30px;
+    }
+
+    .userAccountWrapper .ant-tabs-tab {
+        font-size: 14px;
+        margin-right: 20px;
+    }
+
+    .userAccountWrapper .ant-tabs-tab:nth-child(3) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .userAccountWrapper .ant-tabs-tab {
+        font-size: 12px;
+        margin-right: 9px;
+    }
+
+    .userAccountWrapper .ant-tabs-tab:nth-child(3) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 335px) {
+    .workBoardWrapper .ant-tabs-tab {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .registrationForm.ant-form .ant-form-item .ant-form-item-label, .registrationForm.ant-form .ant-form-item .ant-form-item-control {
+        -moz-box-flex: 0;
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+
+
+    /*User Account tabs*/
+    .userAccountWrapper .ant-tabs > .ant-tabs-nav, .ant-tabs > div > .ant-tabs-nav {
+        display: none;
+    }
+}

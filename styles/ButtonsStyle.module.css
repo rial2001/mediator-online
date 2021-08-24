@@ -1,0 +1,50 @@
+.primaryButton {
+    margin-right: 36px;
+    width: 245px;
+    height: 47px;
+    background: #53B794;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.primaryButton:hover, .primaryButton:focus, .primaryButton:active {
+    background: #53B794;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.defaultButton {
+    max-width: 245px;
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 0;
+    height: 47px;
+    box-shadow: none;
+}
+
+.defaultButton:hover, .defaultButton:active, .defaultButton:focus {
+    color: #000000;
+    border-color: #000000;
+    box-shadow: none;
+}
+
+.textButton span {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+}
+
+.textButton {
+    padding: 0;
+}
+
+.textButton:active {
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.42);
+}

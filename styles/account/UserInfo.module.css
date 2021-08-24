@@ -1,0 +1,92 @@
+.userInfo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 360px;
+    align-content: space-between;
+}
+
+.userInfoBlock {
+    max-width: 260px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.textBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.titleInfo {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    margin-bottom: 10px;
+}
+
+input.textInto {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 23px;
+    padding: 0;
+    color: #000000;
+}
+
+input.textInto[readonly] {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 23px;
+    border: none;
+    outline: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+input.textInto[readonly]::placeholder {
+    color: #000000;
+}
+
+input.textInto:focus[readonly], input.textInto:active[readonly], input.textInto:hover[readonly] {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 780px) {
+    .userInfo {
+        flex-direction: inherit;
+        justify-content: space-between;
+    }
+
+    .userInfoBlock {
+        flex-basis: 44%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .userInfo {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .userInfo {
+        flex-direction: column;
+        height: fit-content;
+        padding: 0 20px;
+    }
+
+    .userInfoBlock {
+        margin-right: 0;
+        max-width: 340px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .userInfo {
+        padding: 0;
+    }
+}

@@ -1,0 +1,125 @@
+.footer {
+    background-color: #53B794;
+    padding: 40px 0;
+}
+
+.footerContent {
+    padding: 0 70px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footerLogo {
+    width: 287px;
+}
+
+h2.footerLogoTitle {
+    font-style: normal;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 23px;
+    color: #FFFFFF;
+    margin-bottom: 21px;
+}
+
+div.footerLogoSubTitle {
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 23px;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+}
+
+div.footerLogoSubTitle:last-child {
+    margin: 0;
+}
+
+.footerLinksApp {
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 960px) {
+    .footer {
+        padding: 48px 0 28px 0;
+    }
+
+    .footerContent {
+        padding: 0 10px 0;
+    }
+
+    .footerLogo {
+        width: 250px;
+    }
+    div.footerLogoSubTitle {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .footer {
+        padding: 40px 0;
+    }
+    .footerLogo {
+        margin-right: 0;
+        margin-bottom: 33px;
+        width: 100%;
+    }
+    h2.footerLogoTitle {
+        margin-bottom: 10px;
+    }
+    .footerContent {
+        flex-direction: column;
+    }
+    .footerInfoBlock {
+        display: flex;
+    }
+    div.footerLogoSubTitle {
+        flex: 1;
+        margin: 0;
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footerContent {
+        padding: 0 10px;
+    }
+    h2.footerLogoTitle {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    .footerInfoBlock {
+        flex-direction: column;
+    }
+    div.footerLogoSubTitle {
+        margin-bottom: 20px;
+        font-size: 10px;
+    }
+    .footerLogo {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .footer {
+        padding: 49px 0 41px;
+    }
+    .footerContent {
+        padding: 0 35px;
+        justify-content: center;
+    }
+    .footerLogo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+    }
+    div.footerLogoSubTitle {
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    .footerLogo {
+        margin-bottom: 32px;
+    }
+}

@@ -1,0 +1,116 @@
+.cardSection {
+    padding: 53px 0;
+    background-color: #fff;
+}
+
+.cardWrapper {
+    padding: 0 60px;
+    display: flex;
+}
+
+.card {
+    flex: 1;
+    min-height: 224px;
+    padding: 20px 40px 43px;
+    margin-right: 60px;
+}
+
+.card:last-child {
+    margin-right: 0;
+}
+
+.card > div {
+    padding: 0;
+}
+
+.img {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+h4.cardTitle {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 23px;
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 14px;
+}
+
+div.cardDescription {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 960px) {
+    .cardWrapper {
+        padding: 0 10px;
+    }
+
+    .card {
+        padding: 40px 30px;
+        margin-right: 0;
+    }
+
+    .img {
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .cardSection {
+        padding: 10px 0;
+    }
+
+    .cardWrapper {
+        flex-direction: column;
+    }
+
+    .card {
+        min-height: 245px;
+        padding: 20px 22px 20px 29px;
+        margin-bottom: 10px;
+    }
+
+    .card > div {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .img {
+        height: auto;
+    }
+
+    h4.cardTitle {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .card > div {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .cardContent {
+        margin-left: 0;
+    }
+
+    div.cardDescription {
+        text-align: initial;
+    }
+}

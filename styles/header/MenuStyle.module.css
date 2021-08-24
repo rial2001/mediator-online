@@ -1,0 +1,137 @@
+.menu {
+    border: none;
+    background: transparent;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.buttonsMenu {
+    justify-content: flex-end;
+}
+
+.buttonsMenu li:last-child {
+    margin: 0;
+}
+
+.menu li {
+    margin: 0 18px 0 0;
+}
+
+.burgerMenu {
+    display: block;
+}
+
+.burgerMenu li {
+    margin-right: 39px;
+}
+
+.burgerMenu li:last-child {
+    margin-right: 0;
+}
+
+a.menuItem {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+    height: 100%;
+}
+
+.authBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.authBlockMobile {
+    align-items: flex-start;
+}
+
+a.userName {
+    color: #000000;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 23px;
+}
+
+a.userName:before {
+    display: none;
+}
+
+a.menuItem:hover {
+    color: #000000;
+}
+
+a.menuItemActive {
+    color: #000000;
+}
+
+@media screen and (max-width: 960px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .buttonsMenu {
+        max-width: 160px;
+        width: 100%;
+    }
+
+    .authBlock {
+        max-width: 122px;
+    }
+
+    a.menuItem {
+        height: 27px;
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    a.userName {
+        color: #000000;
+        font-weight: 800;
+        font-size: 12px;
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .buttonsMenu {
+        max-width: 100%;
+    }
+
+    .authBlock {
+        max-width: 140px;
+    }
+
+    .burgerMenu {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 26px;
+    }
+
+    .burgerNavigationMenu {
+        display: flex;
+        align-items: baseline;
+        flex-direction: column;
+        height: 139px;
+        justify-content: space-between;
+    }
+
+    a.menuItem {
+        margin-bottom: 35px;
+        font-size: 18px;
+        line-height: 23px;
+        color: #FFFFFF;
+    }
+}

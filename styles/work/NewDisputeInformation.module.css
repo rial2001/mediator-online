@@ -1,0 +1,88 @@
+.content {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto 18px;
+}
+
+
+h4.tabTitle {
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.blockInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.textBlock {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 34px;
+}
+.textBlock h5 {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    margin-bottom: 26px;
+    margin-top: 0;
+}
+
+.textBlock span {
+    font-size: 14px;
+    line-height: 23px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.textBlockRow {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.textBlockRow h5 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.otherInfo {
+    margin-top: 78px;
+}
+
+h5.recommendation {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    margin-bottom: 12px;
+    margin-top: 0;
+}
+
+.invite {
+    display: flex;
+    margin-top:50px;
+    align-items: center;
+}
+
+.invite h5 {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    margin-top: 0;
+    margin-right: 50px;
+}
+
+.downloadBtn, .navigationBtn {
+    width: 154px;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    height: 50px;
+}
+.buttonsBlock {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 113px;
+}

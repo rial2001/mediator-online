@@ -1,0 +1,125 @@
+.workBoardCard {
+    padding: 20px 30px;
+    background-color: #F3F3F3;
+    min-height: 253px;
+    flex-basis: 32%;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin-right: 20px;
+}
+
+.workBoardCard:nth-child(3n+3) {
+    margin-right: 0;
+}
+
+h3.cardTitle {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+div.cardDescription {
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+.membersBlock {
+    margin-bottom: 20px;
+}
+
+.membersItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.userAvatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+h5.membersName {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+    margin: 0;
+}
+
+a.chatLink {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 23px;
+    text-decoration-line: underline;
+    color: #000000;
+    margin: 0;
+}
+
+a.chatLink:hover {
+    color: #000000;
+    text-decoration-line: underline;
+}
+
+@media screen and (max-width: 1120px) {
+    .workBoardCard {
+        margin-right: 10px;
+    }
+
+}
+
+@media screen and (max-width: 690px) {
+    .workBoardCard {
+        margin-bottom: 20px;
+        flex-basis: 48%;
+        margin-right: 20px;
+    }
+
+    .workBoardCard:nth-child(3n+3) {
+        margin-right: 20px;
+    }
+
+    .workBoardCard:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .cardDescription {
+        margin-bottom: 30px;
+    }
+
+}
+
+@media screen and (max-width: 525px) {
+    .workBoardCard {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+
+    .workBoardCard:nth-child(3n+3) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 335px) {
+    div.cardDescription {
+        font-size: 12px;
+        line-height: 23px;
+    }
+
+    h5.membersName {
+        font-weight: 200;
+        font-size: 12px;
+        line-height: 23px;
+    }
+
+    a.chatLink {
+        font-weight: 200;
+        font-size: 12px;
+        line-height: 23px;
+    }
+}

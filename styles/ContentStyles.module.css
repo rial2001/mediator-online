@@ -1,0 +1,22 @@
+.content {
+    background: fixed url('/backgr.png') center no-repeat ;
+    background-size: cover;
+    height: 574px;
+    width: 100%;
+}
+@media screen and (max-width: 960px) {
+    .content {
+        background-position: 10%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .content {
+        background-position: 20%;
+    }
+}
+@media screen and (max-width: 320px) {
+    .content {
+        background-position: 25%;
+    }
+}

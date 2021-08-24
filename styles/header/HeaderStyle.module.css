@@ -1,0 +1,249 @@
+.header {
+    background-color: #F3F3F3;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.headerContent {
+    padding: 0 70px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerLogo {
+    background-image: url('/Logotype.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: contain;
+    padding-left: 58px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 10px;
+    max-width: 249px;
+    width: 100%;
+    height: 100%;
+}
+
+h1.headerLogoTitle {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #53B794;
+    margin: 0;
+}
+
+.headerLinkBlock a {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+    text-decoration: underline;
+}
+
+.headerLinkBlock {
+    height: fit-content;
+    max-width: 222px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 7px;
+}
+
+.linkBlockAuth {
+    display: none;
+}
+
+.authBlockHeader {
+    display: none;
+    margin: 0 34px 0 auto;
+}
+
+a.userName {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+}
+
+a.userName:hover, a.userName:active, a.userName:focus {
+    color: #000000;
+}
+
+.headerMenuBlock {
+    display: flex;
+    max-width: 590px;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+}
+
+.headerLinkBlock a:hover {
+    text-decoration: underline;
+    color: #000000;
+}
+
+h5.mobileTitle {
+    margin: 0 auto;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 23px;
+}
+
+@media screen and (max-width: 1168px) {
+    .headerLogo {
+        max-width: fit-content;
+        padding-left: 38px;
+    }
+
+    h1.headerLogoTitle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .headerContent {
+        padding: 0 10px;
+    }
+
+    h1.headerLogoTitle {
+        font-size: 18px;
+        height: 23px;
+        line-height: 25px;
+        display: block;
+    }
+
+    .headerLogo {
+        padding-left: 58px;
+    }
+
+    .authBlockHeader {
+        display: block;
+    }
+
+    .headerMenuBlock {
+        width: initial;
+    }
+
+    .headerLinkBlock {
+        margin: 0 32px 0 auto;
+    }
+
+    .headerLinkBlock a {
+        line-height: 39px;
+    }
+
+    .wrapperMenu {
+        display: none;
+    }
+
+    .active {
+        padding: 92px 0 0 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 340px;
+        height: 100vh;
+        background-color: #53B794;
+        z-index: 3;
+    }
+
+    a.burgerMenuTitle {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 23px;
+        color: #FFFFFF;
+        margin-bottom: 80px;
+    }
+
+    .burgerMenuClose {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: transparent;
+        color: red;
+        font-size: 15px;
+        border: 1px solid red;
+    }
+
+    .burgerMenuClose:hover, .burgerMenuClose:active, .burgerMenuClose:focus {
+        background: transparent;
+        color: red;
+        border: 2px solid red;
+    }
+
+    .burgerMenuButtons {
+        margin-top: 80px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .headerLinkBlock {
+        margin: 0 23px 0 auto;
+    }
+
+    .authBlockHeader {
+        margin: 0 19px 0 auto;
+    }
+}
+
+@media screen and (max-width: 529px) {
+    .headerLogo {
+        max-width: fit-content;
+        padding-left: 38px;
+    }
+
+    h1.headerLogoTitle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        height: 60px;
+    }
+
+    .headerContent {
+        height: 27px;
+    }
+
+    .headerLogo {
+        width: 28px;
+        padding-left: 28px;
+    }
+
+    .headerLinkBlock {
+        margin: 0 auto;
+    }
+
+    .authBlockHeader {
+        margin: 0 12px 0 auto;
+    }
+
+
+    .headerLinkBlock a {
+        line-height: 23px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header {
+        height: 50px;
+    }
+
+    .headerLinkBlock {
+        display: none;
+    }
+
+    .authBlockHeader {
+        display: none;
+    }
+}

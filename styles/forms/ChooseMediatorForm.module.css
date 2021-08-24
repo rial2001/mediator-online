@@ -1,0 +1,145 @@
+.sectionDispute {
+    padding: 44px 0 40px;
+}
+
+.content {
+    padding: 0 120px;
+}
+
+h4.title {
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+}
+
+.chooseMediatorForm {
+    margin-top: 40px;
+}
+
+.chooseMediatorWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mediatorGroup label {
+    height: fit-content;
+    background-color: #F3F3F3;
+    padding: 0;
+}
+
+.mediatorGroup label:before {
+    display: none;
+}
+
+.mediatorGroup {
+    max-width: 1025px;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+}
+
+.mediatorGroup label.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    background: #F3F3F3;
+}
+
+.mediatorItem {
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.buttonsBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 526px;
+    width: 100%;
+}
+
+.button {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    width: 245px;
+}
+
+@media screen and (max-width: 960px) {
+    .sectionDispute {
+        padding: 40px 0;
+    }
+
+    .content {
+        padding: 0 10px;
+    }
+
+    .mediatorGroup label {
+        max-width: 220px;
+        width: 100%;
+    }
+
+    .mediatorItem {
+        width: 220px;
+    }
+
+    .buttonsBlock {
+        max-width: 636px;
+    }
+
+    .button {
+        max-width: 300px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .mediatorItem {
+        max-width: 300px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .mediatorGroup label {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .buttonsBlock {
+        max-width: 100%;
+        flex-wrap: nowrap;
+    }
+
+    .buttonsBlock > * {
+        justify-content: space-between;
+    }
+
+    .button {
+        max-width: 48%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .mediatorGroup label {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .buttonsBlock {
+        width: 300px;
+    }
+
+    .button {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .button:first-child {
+        margin-bottom: 20px;
+    }
+}

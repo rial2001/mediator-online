@@ -1,0 +1,17 @@
+.loader {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader span {
+    font-size: 42px;
+}
+
+.loader span i {
+    width: 17px;
+    height: 17px;
+    background-color: #53B794;
+}

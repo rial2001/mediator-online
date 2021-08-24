@@ -1,0 +1,28 @@
+.dropdownTitle {
+    position: absolute;
+    top: 11.5px;
+    left: calc(50% - 87px);
+    width: 174px;
+    text-align: center;
+    display: none;
+}
+
+h5.title {
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 23px;
+    margin-bottom: 0;
+}
+
+.tabsMenu {
+    padding: 10px 0;
+    width: 100vw;
+    text-align: center;
+    background-color: #F3F3F3;
+}
+
+@media screen and (max-width: 320px) {
+    .dropdownTitle {
+        display: block;
+    }
+}

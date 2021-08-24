@@ -1,0 +1,39 @@
+.chooseMediatorWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mediatorGroup label {
+    height: fit-content;
+    background-color: #F3F3F3;
+    padding: 0;
+}
+
+.mediatorGroup label:before {
+    display: none;
+}
+
+.mediatorGroup {
+    max-width: 1025px;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+}
+
+.mediatorGroup label.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    background: #F3F3F3;
+}
+
+.mediatorItem {
+    width: 473px;
+    margin-bottom: 40px;
+}
+
+.mediatorItem label.ant-radio-button-wrapper.ant-radio-button-wrapper-checked {
+    background-color: #F3F3F3;
+    border: 2px solid #C4C4C4;
+}

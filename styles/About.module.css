@@ -1,0 +1,396 @@
+
+.about {
+    background-color: #fff;
+}
+
+.about:nth-child(2n+1) {
+    background-color: #F3F3F3;
+}
+
+.content {
+    padding: 40px 120px;
+}
+
+.about h2 {
+    font-weight: 800;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 20px;
+    line-height: 73px;
+}
+
+.description {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 33px;
+    color: #000000;
+}
+
+div.descriptionInfo {
+    max-width: 800px;
+    width: 100%;
+    margin-left: auto;
+}
+
+.serviceBlock {
+    margin-top: 50px;
+}
+
+.serviceBlock h4 {
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.principleBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list li {
+    font-weight: 200;
+    font-size: 12px;
+    color: #000000;
+    display: flex;
+    align-items: flex-start;
+    list-style: none;
+    width: 435px;
+    line-height: 25px;
+    margin-bottom: 20px;
+}
+
+.list li span {
+    font-weight: 800;
+    font-size: 48px;
+    color: #000000;
+    margin-right: 45px;
+    line-height: 46px;
+}
+
+h2.principleTitle {
+    text-align: center;
+}
+
+.listPrinciples li {
+    margin-bottom: 50px;
+}
+
+h2.stepsMediationTitle {
+    margin-bottom: 20px;
+}
+
+.stepsMediation {
+    display: flex;
+    position: relative;
+}
+
+.stepItem {
+    width: 50%;
+}
+
+.stepItem div.stepDescription {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 33px;
+    color: #000000;
+    margin-right: 83px;
+}
+
+.stepItem div.stepDescription:first-child {
+    margin-bottom: 90px;
+}
+
+.stepItem div.stepDescription:nth-child(2) {
+    position: absolute;
+    top: calc(50% - 80px);
+    right: calc(50% - 535px);
+    max-width: 440px;
+    width: 100%;
+    margin: 0;
+}
+
+.stepNumberBlock {
+    position: relative;
+    width: 5px;
+    min-height: 409px;
+    height: 100%;
+    background-color: #000000;
+}
+
+.stepNumber {
+    width: 53px;
+    height: 53px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}
+
+.stepNumber:nth-child(2) {
+    top: calc(50% - 25px)
+}
+
+.stepNumber:nth-child(3) {
+    top: calc(100% - 25px);
+}
+
+.stepNumberCenter {
+    top: calc(50% - 25px);
+    left: -27px;
+}
+
+.stepNumber span {
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+h2.differentTitle {
+    line-height: 73px;
+    margin-bottom: 30px;
+}
+
+h5.differentSubtitle {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.preparationList {
+    list-style-position: inside;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.preparationList li::marker {
+    font-weight: 800;
+}
+
+.stepsList {
+    margin-left: 40px;
+}
+
+.stepsList li::marker {
+    font-weight: 200;
+}
+
+@media screen and (max-width: 1075px) {
+    .stepItem div.stepDescription:nth-child(2) {
+        max-width: 278px;
+        top: calc(50% - 134px);
+        right: calc(50% - 381px);
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .content {
+        padding: 40px 90px;
+    }
+
+    div.descriptionInfo {
+        max-width: 620px;
+        margin-bottom: 0;
+    }
+
+    .list li {
+        width: 375px;
+    }
+
+    .stepItem div.stepDescription:nth-child(2) {
+        top: calc(50% - 100px);
+        right: calc(50% - 370px);
+        max-width: 300px;
+    }
+
+    .stepItem {
+        width: 460px;
+    }
+
+    .stepNumberBlock {
+        min-height: 409px;
+        right: -50px;
+    }
+
+    .stepItem div.stepDescription:nth-child(2) {
+        right: calc(50% - 420px);
+        max-width: 220px;
+    }
+
+    .stepItem div.stepDescription:first-child {
+        margin-bottom: 83px;
+    }
+
+    .stepItem div.stepDescription {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .stepItem {
+        width: 365px;
+    }
+
+    .stepItem div.stepDescription:nth-child(2) {
+        right: calc(50% - 340px);}
+}
+
+@media screen and (max-width: 835px) {
+    .content {
+        padding: 30px 10px;
+    }
+
+    .about h2 {
+        font-size: 24px;
+        line-height: 73px;
+    }
+
+    .serviceBlock h4 {
+        font-size: 24px;
+        line-height: 33px;
+        margin-bottom: 23px;
+    }
+
+    .list li {
+        width: 265px;
+    }
+
+    .listPrinciples {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .listPrinciples li {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .listPrinciples li span, .list li span {
+        font-size: 48px;
+        margin-right: 25px;
+    }
+
+    .stepItem div.stepDescription:nth-child(2) {
+        position: inherit;
+        max-width: 540px;
+        margin: 0;
+    }
+
+    .stepItem div.stepDescription:first-child, .stepItem div.stepDescription:nth-child(2) {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .stepItem div.stepDescription:last-child {
+        margin-bottom: 0;
+    }
+
+    .stepItem {
+        order: 1;
+        margin-left: 80px;
+        width: 100%;
+    }
+
+    .stepNumberBlock {
+        min-height: 362px;
+        order: 0;
+        left: 29px;
+        top: 25px;
+    }
+
+    .stepNumber:nth-child(2) {
+        top: calc(50% + 22px);
+    }
+
+    .stepNumber:nth-child(3) {
+        top: calc(100% - 35px);
+    }
+}
+
+@media screen  and (max-width: 516px){
+    .stepNumberBlock {
+        min-height: 434px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .list {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .list li {
+        width: 100%;
+    }
+
+    .stepNumberBlock {
+        min-height: 390px;
+    }
+
+    .stepItem div.stepDescription:first-child, .stepItem div.stepDescription:nth-child(2) {
+        margin-bottom: 20px;
+    }
+
+    .stepNumber:nth-child(2) {
+        top: calc(50% + 40px);
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .about .content {
+        padding: 20px 10px;
+    }
+
+    .about h2 {
+        font-size: 16px;
+        text-align: center;
+        line-height: 33px;
+    }
+
+    .serviceBlock h4 {
+        font-size: 14px;
+        line-height: 33px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .listPrinciples li span, .list li span {
+        font-size: 38px;
+
+    }
+
+    .about div.stepDescription {
+        font-size: 12px;
+        line-height: 23px;
+
+    }
+
+    .stepsList {
+        margin-left: 0;
+    }
+
+    h2.differentTitle {
+        margin-bottom: 20px;
+    }
+}

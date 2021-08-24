@@ -1,0 +1,72 @@
+.workBoardSection {
+    padding: 40px 0;
+    background-color: #fff;
+    min-height: 905px;
+}
+
+.workBoardWrapper {
+    padding: 0 60px;
+}
+
+.workBoard {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 1162px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+h3.workTitle {
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    color: #C4C4C4;
+}
+
+a.openDispute {
+    display: flex;
+    justify-self: flex-end;
+    justify-content: flex-end;
+    margin-left: auto;
+    text-align: right;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 23px;
+    color: #000000;
+}
+
+a.openDispute:hover {
+    color: #000000;
+}
+
+@media screen and (max-width: 960px) {
+    .workBoardWrapper {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .workBoard {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .workBoard {
+        margin-top: 30px;
+    }
+
+    h3.workTitle {
+        font-size: 12px;
+        line-height: 23px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    a.openDispute {
+        font-size: 14px;
+    }
+}

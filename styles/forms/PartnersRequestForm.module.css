@@ -1,0 +1,81 @@
+.form {
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.item input {
+    margin-bottom: 32px;
+}
+
+.item label {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.formItem {
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    margin: 0 0 32px auto;
+    height: 54px;
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
+    border-radius: 0;
+}
+
+.button {
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 23px;
+    letter-spacing: 0.2em;
+    color: #FFFFFF;
+    margin: 0 40px 0 auto;
+    display: block;
+    width: 262px;
+    height: 59px;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 960px) {
+    .item input {
+        margin-bottom: 20px;
+    }
+
+    .formItem {
+        margin: 0 0 20px auto;
+    }
+
+    input.formItem {
+        margin: 0 0 20px auto;
+    }
+
+    .button {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .item input {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+
+    input.phoneField {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .button {
+        margin-top: 40px;
+    }
+
+    .item label {
+        margin: 0 0 20px 0;
+    }
+}

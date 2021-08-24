@@ -1,0 +1,65 @@
+.userCheck {
+    display: flex;
+    height: 360px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.userCheckBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+div.title {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+}
+
+span.text {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 23px;
+}
+
+.buttonsBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonsBlock button {
+    text-align: left;
+    padding: 0;
+    height: fit-content;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 960px) {
+    .userCheck {
+        max-width: 456px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .userCheck {
+        margin-top: 48px;
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .userCheck {
+        flex-direction: column;
+        margin: 30px 0 40px;
+    }
+
+    .userCheckBlock {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .userCheck {
+        margin: 0 0 40px 0;
+    }
+}

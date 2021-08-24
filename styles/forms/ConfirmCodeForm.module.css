@@ -1,0 +1,47 @@
+.confirmCodeForm {
+    margin: 70px auto 0;
+    max-width: 256px;
+    width: 100%;
+}
+
+.item {
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.confirmCodeField {
+    width: 256px;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 23px;
+    color: #000000;
+    margin-top: 20px;
+    height: 54px;
+}
+
+a.resendCode {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 23px;
+    color: #C4C4C4;
+    text-align: center;
+    margin: 0 auto;
+}
+
+a.resendCode:hover, a.resendCode:focus  {
+    text-decoration: underline;
+    color: #000000;
+}
+
+.buttonsBlock div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formButton {
+    width: 123px;
+    height: 35px;
+    margin: 0;
+}

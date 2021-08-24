@@ -1,0 +1,135 @@
+.categorySection {
+    background-color: #F3F3F3;
+    padding: 40px 0;
+}
+
+.categoryWrapper {
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+h2.categoryTitle {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 23px;
+    color: #000000;
+    margin: 0;
+    flex: 1;
+}
+
+.categoryBlockWrapper {
+    display: flex;
+    flex: 2;
+}
+
+.categoryBlock {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+a.categoryItem {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 23px;
+    color: #000000;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+a.categoryItem:last-child {
+    margin-bottom: 0;
+}
+
+a.categoryItem:hover {
+    color: #000000;
+}
+
+@media screen and (max-width: 960px) {
+    a.categoryItem {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .categorySection {
+        padding: 40px 0 20px;
+    }
+
+    .categoryWrapper {
+        padding: 0 14px;
+    }
+
+    .categoryBlockWrapper {
+        flex-direction: column;
+        flex-basis: 50%;
+        flex: 1;
+    }
+
+    a.categoryItem {
+        margin-bottom: 20px;
+    }
+
+    a.categoryItem:last-child {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .categorySection {
+        padding: 48px 0 25px;
+    }
+    .categoryWrapper {
+        padding: 0 30px;
+    }
+
+    h2.categoryTitle {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+
+    .categoryWrapper {
+        flex-direction: column;
+    }
+
+    .categoryBlockWrapper {
+        flex-direction: row;
+        flex-basis: 100%;
+    }
+
+    a.categoryItem {
+        margin-bottom: 15px;
+        font-size: 12px;
+    }
+
+    a.categoryItem:last-child {
+        margin-bottom: 15px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .categorySection {
+        padding: 40px 0 5px;
+    }
+
+    h2.categoryTitle {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .categoryBlockWrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+
+}

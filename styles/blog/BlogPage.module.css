@@ -1,0 +1,113 @@
+.pageBlogSection {
+    padding: 0 0 40px 0;
+}
+
+.content {
+    padding: 60px 60px 0;
+}
+
+.blogContent {
+    margin-bottom: 70px;
+}
+
+.imageContent, .headerImage {
+    width: 100%;
+    height: 403px;
+    background: #C4C4C4;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.imageContent {
+    margin: 30px 0;
+}
+
+.titleBlog {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.titleBlog h2 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 23px;
+    flex: 2;
+}
+
+.titleBlog span {
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 23px;
+    letter-spacing: 0.1em;
+    color: #000000;
+    width: 560px;
+}
+
+.textBlock {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+}
+
+h3.titleRecommend {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+}
+
+
+@media screen and (max-width: 960px) {
+
+    .content {
+        padding: 40px 80px 0;
+    }
+    .titleBlog h2 {
+        margin-bottom: 20px;
+    }
+    .titleBlog {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .titleBlog h2 {
+        margin-right: 40px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .content {
+        padding: 40px 10px 0;
+    }
+
+    .titleBlog {
+        flex-direction: column;
+    }
+
+    .titleBlog h2, h3.titleRecommend {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .titleBlog span {
+        max-width: 460px;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 320px) {
+    .titleBlog h2, h3.titleRecommend {
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+        margin-right: 0;
+    }
+    .titleBlog span {
+        font-weight: 200;
+        font-size: 10px;
+        line-height: 23px;
+    }
+}

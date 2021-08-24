@@ -1,0 +1,112 @@
+.accountSection {
+    height: fit-content;
+    padding: 40px 0;
+}
+
+.content {
+    padding: 0 110px;
+}
+
+.userAccountWrapper {
+    margin-bottom: 40px;
+}
+
+.blogInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 105px;
+    flex-wrap: wrap;
+}
+
+.userInfo div {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.userInfo span {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+}
+
+a.deleteAccount {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 23px;
+    color: #000000;
+}
+
+a.deleteAccountMobile {
+    display: none;
+}
+
+a.deleteAccount:hover, a.deleteAccount:focus, a.deleteAccount:active {
+    color: #000000;
+}
+
+@media screen and (max-width: 960px) {
+    .content {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    a.deleteAccount {
+        display: flex;
+        justify-self: flex-end;
+        justify-content: flex-end;
+        margin-left: auto;
+        text-align: right;
+        font-style: normal;
+    }
+}
+
+@media screen and (max-width: 535px) {
+    a.deleteAccount {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        padding: 0 50px;
+    }
+
+    a.deleteAccountDesktop {
+        display: none
+    }
+
+    a.deleteAccountMobile {
+        display: inline-block;
+    }
+
+    a.deleteAccount {
+        text-align: left;
+        margin-left: 0;
+        margin-right: auto;
+        justify-self: flex-start;
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 446px) {
+    .content {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .content {
+        padding: 0 10px;
+    }
+
+    a.deleteAccount {
+        padding-left: 0;
+    }
+}
