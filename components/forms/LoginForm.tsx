@@ -89,7 +89,7 @@ const LoginForm: FC = () => {
           )}
           onClick={() => router.push(appRouters.registration)}
         >
-          перейти к регистрации
+          Регистрации
         </Typography.Link>
       </div>
     </Form>
