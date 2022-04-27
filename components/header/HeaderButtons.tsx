@@ -1,12 +1,13 @@
-import { FC, memo } from 'react';
+import { FC, useCallback, memo } from 'react';
 import { Menu, Typography } from 'antd';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
 import classNames from 'classnames';
 
 import { appRouters } from '@routers/appRouters';
 import { userSelector } from '@redux/auth/authSelectors';
 import useAuth from '@hooks/useAuth';
+import { authAction } from '@redux/auth/authActions';
 
 import styles from '@styles/header/MenuStyle.module.css';
 
@@ -17,7 +18,15 @@ interface IHeaderMenuButtons {
 
 const HeaderButtons: FC<IHeaderMenuButtons> = ({ mobile, openLogin }) => {
   const user = useSelector(userSelector);
+  const dispatch = useDispatch();
   const { isAuth } = useAuth();
+
+  const onLogout = useCallback(
+    (): void => {
+      dispatch(authAction.logout());
+    },
+    [dispatch]
+  );
 
   if (isAuth) {
     return (
@@ -41,6 +50,15 @@ const HeaderButtons: FC<IHeaderMenuButtons> = ({ mobile, openLogin }) => {
             </Link>
           </div>
         </Menu.Item>
+        <Menu.Item key="4">
+          <Typography.Link
+            className={styles.menuItem}
+            onClick={() => onLogout()}
+          >
+            Выход
+          </Typography.Link>
+        </Menu.Item>
+
       </Menu>
     );
   }
