@@ -30,6 +30,10 @@
     margin: 0 0 0 auto;
 }
 
+.masked {
+  margin-bottom: 32px;
+}
+
 .buttonSubmit {
     border-radius: 50px;
     color: #FFFFFF;

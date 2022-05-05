@@ -54,13 +54,29 @@ const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
         <Input className={styles.formItem} type="email" />
       </Form.Item>
       <FieldMask
-        className={styles.formItem}
+        className={`${styles.formItem} ${styles.masked}`}
         label="номер телефона"
         mask="+7 (999) 999-99-99"
         name="phone"
         placeholder="+7 (999) 999-99-99"
         rules={rulesFields.phone}
       />
+      <Form.Item
+        className={styles.item}
+        label="пароль"
+        name="password"
+        rules={rulesFields.required}
+      >
+        <Input className={styles.formItem} type="password" />
+      </Form.Item>
+      <Form.Item
+        className={styles.item}
+        label="пароль ещё раз"
+        name="repeat"
+        rules={rulesFields.required}
+      >
+        <Input className={styles.formItem} type="password" />
+      </Form.Item>
       <Form.Item className={styles.buttonsBlock}>
         <Button
           className={classNames(buttonsStyle.defaultButton, styles.buttonNext)}
