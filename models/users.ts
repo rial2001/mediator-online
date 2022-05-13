@@ -18,7 +18,10 @@ export interface IUser {
 
 export interface IRegistrationUser {
   email: string;
-  name: string;
+  firstName: string;
+  lastName: string;
+  username: string;
   phone: string;
   userType: userType;
+  password: string;
 }

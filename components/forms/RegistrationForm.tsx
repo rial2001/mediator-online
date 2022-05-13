@@ -21,6 +21,7 @@ const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
   const [form] = Form.useForm();
   const onFinish = useCallback(
     (values: IRegistrationUser): void => {
+      console.log(values)
       setUser(values);
       onClick('second');
     },
@@ -39,8 +40,24 @@ const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
       <UserTypeField />
       <Form.Item
         className={styles.item}
-        label="Ф.И.О."
-        name="name"
+        label="Имя"
+        name="Имя"
+        rules={rulesFields.required}
+      >
+        <Input className={styles.formItem} />
+      </Form.Item>
+      <Form.Item
+        className={styles.item}
+        label="Фамилия"
+        name="lastName"
+        rules={rulesFields.required}
+      >
+        <Input className={styles.formItem} />
+      </Form.Item>
+      <Form.Item
+        className={styles.item}
+        label="Логин"
+        name="username"
         rules={rulesFields.required}
       >
         <Input className={styles.formItem} />

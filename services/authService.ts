@@ -14,13 +14,8 @@ export const authService = {
 
   logout: () => axios.post(`${API_URL}/api/logout`),
 
-  registration: ({ email, name, phone, userType }) =>
-    axios.post(`${API_URL}/api/registration`, {
-      email,
-      name,
-      phone,
-      userType,
-    }),
+  registration: ({ email, firstName, lastName, username, phone, userType, password }) =>
+    axios.post(`${API_URL}/auth/registration`, {email, firstName, lastName, username, phone, userType, password}),
 
   sendCode: phone =>
     axios.post(`${API_URL}/api/verifyCode/sendCode`, {
