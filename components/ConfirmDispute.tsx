@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { newDisputeSelector } from '@redux/work/workSelectors';
 import { workActions } from '@redux/work/workActions';
-import { userIdSelector } from '@redux/auth/authSelectors';
 import Loader from '@components/Loader';
 
 import buttonsStyle from '@styles/ButtonsStyle.module.css';
@@ -16,7 +15,7 @@ interface IConfirmDispute {
 
 const ConfirmDispute: FC<IConfirmDispute> = ({ setShow }) => {
   const disputeInfo = useSelector(newDisputeSelector);
-  const id = useSelector(userIdSelector);
+  const id = useSelector(state => state.user.user?.id);
   const dispatch = useDispatch();
 
   const confirmHandler = useCallback((): void => {

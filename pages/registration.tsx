@@ -7,8 +7,8 @@ import Layout from '@components/Layout';
 import RegistrationForm from '@components/forms/RegistrationForm';
 import Container from '@components/Container';
 import ConfirmCodeForm from '@components/forms/ConfirmCodeForm';
-import { authAction } from '@redux/auth/authActions';
-import { IRegistrationUser } from '@models/users';
+import {registration} from '@redux/user';
+import {IRegistrationUser} from '@models/users';
 
 import styles from '@styles/forms/RegistrationForm.module.css';
 
@@ -24,8 +24,7 @@ const Registration: FC = () => {
 
   useEffect(() => {
     if (user) {
-      dispatch(authAction.registration(user));
-
+      dispatch(registration(user));
       setDisable(false);
     }
   }, [user, dispatch]);

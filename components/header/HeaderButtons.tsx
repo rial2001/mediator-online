@@ -5,9 +5,8 @@ import Link from 'next/link';
 import classNames from 'classnames';
 
 import { appRouters } from '@routers/appRouters';
-import { userSelector } from '@redux/auth/authSelectors';
 import useAuth from '@hooks/useAuth';
-import { authAction } from '@redux/auth/authActions';
+import { logout } from '@redux/user';
 
 import styles from '@styles/header/MenuStyle.module.css';
 
@@ -17,16 +16,13 @@ interface IHeaderMenuButtons {
 }
 
 const HeaderButtons: FC<IHeaderMenuButtons> = ({ mobile, openLogin }) => {
-  const user = useSelector(userSelector);
+  const user = useSelector(state => state.user.user);
   const dispatch = useDispatch();
   const { isAuth } = useAuth();
 
-  const onLogout = useCallback(
-    (): void => {
-      dispatch(authAction.logout());
-    },
-    [dispatch]
-  );
+  const onLogout = useCallback(() => {
+    dispatch(logout());
+  }, [dispatch]);
 
   if (isAuth) {
     return (

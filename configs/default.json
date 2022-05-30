@@ -1,4 +1,4 @@
 {
-  "API_URL": "http://85.193.88.17:8080/tasker/api/v1",
+  "API_URL": "/api/v1",
   "SECRET_KEY": "secret-key"
 }

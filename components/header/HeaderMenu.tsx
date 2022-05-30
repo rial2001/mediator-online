@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import Link from 'next/link';
 
 import { appRouters } from '@routers/appRouters';
-import { userIdSelector } from '@redux/auth/authSelectors';
 import useAuth from '@hooks/useAuth';
 import Login from '@components/forms/Login';
 import { PrivateAppRouters } from '@components/PrivateAppRouters';
@@ -17,7 +16,7 @@ interface IHeaderMenu {
 }
 
 const HeaderMenu: FC<IHeaderMenu> = ({ mobile }) => {
-  const id = useSelector(userIdSelector);
+  const id = useSelector(state => state.user.user?.id);
   const { isAuth } = useAuth();
   const [open, setOpen] = useState(false);
 

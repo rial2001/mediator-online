@@ -12,7 +12,6 @@ import BurgerMenu from '@components/header/BurgerMenu';
 import Container from '@components/Container';
 import Login from '@components/forms/Login';
 import useAuth from '@hooks/useAuth';
-import { userSelector } from '@redux/auth/authSelectors';
 
 import styles from '@styles/header/HeaderStyle.module.css';
 
@@ -20,7 +19,7 @@ const Header: FC = () => {
   const [openBurgerMenu, setOpenBurgerMenu] = useState<boolean>(false);
   const [openLoginForm, setOpenLoginForm] = useState<boolean>(false);
   const { isAuth } = useAuth();
-  const user = useSelector(userSelector);
+  const user = useSelector(state => state.user.user);
 
   const burgerClickHandler = useCallback((): void => {
     setOpenBurgerMenu(true);

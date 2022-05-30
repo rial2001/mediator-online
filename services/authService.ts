@@ -1,24 +1,12 @@
 import axios from 'axios';
 
 import { API_URL } from '@configs/default.json';
+import {hnd} from './handler';
 
 export const authService = {
-  confirmCode: ({ code, otp, user }) =>
-    axios.post(`${API_URL}/api/verify`, { code, otp, user }),
-
-  login: (email, password) =>
-    axios.post(`${API_URL}/api/login`, {
-      email,
-      password,
-    }),
-
-  logout: () => axios.post(`${API_URL}/api/logout`),
-
-  registration: ({ email, firstName, lastName, username, phone, userType, password }) =>
-    axios.post(`${API_URL}/auth/registration`, {email, firstName, lastName, username, phone, userType, password}),
-
-  sendCode: phone =>
-    axios.post(`${API_URL}/api/verifyCode/sendCode`, {
-      phone,
-    }),
+  confirmCode: code => axios.put(`${API_URL}/phone/confirm`, {code}).then(hnd),
+  login: (email, password) => axios.put(`${API_URL}/login`, {email, password}).then(hnd),
+  logout: () => axios.put(`${API_URL}/logout`).then(hnd),
+  registration: user => axios.post(`${API_URL}/registration`, user).then(hnd),
+  sendCode: () => axios.put(`${API_URL}/phone/send`).then(hnd)
 };

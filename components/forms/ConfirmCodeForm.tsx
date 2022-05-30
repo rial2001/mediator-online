@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
 
 import { rulesFields } from '@validations/rulesFields';
-import { authAction } from '@redux/auth/authActions';
+import { confirmCode } from '@redux/user';
 import { IRegistrationUser } from '@models/users';
 
 import styles from '@styles/forms/ConfirmCodeForm.module.css';
@@ -21,13 +21,13 @@ const ConfirmCodeForm: FC<IConfirmCode> = ({ clickBack, user }) => {
 
   const onFinish = useCallback(
     (values: { code: string }): void => {
-      dispatch(authAction.confirmCode(values.code, user!));
+      dispatch(confirmCode(values.code));
     },
     [dispatch, user]
   );
 
   const resendCodeHandler = () => {
-    dispatch(authAction.resendCode(user!.phone));
+    //dispatch(authAction.resendCode(user!.phone));
   };
 
   return (

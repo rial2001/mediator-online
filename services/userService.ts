@@ -1,10 +1,8 @@
-import { privateRequestService } from '@services/privateRequestService';
+import axios from 'axios';
+
 import { API_URL } from '@configs/default.json';
+import {hnd} from './handler';
 
 export const userService = {
-  modifyInfo: (payload: { [K: string]: string }) =>
-    privateRequestService.put(
-      `${API_URL}/api/user/modify-information`,
-      payload
-    ),
+  modifyInfo: user => axios.put(`${API_URL}/update`, user).then(hnd)
 };

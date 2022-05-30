@@ -1,5 +1,6 @@
-import { FC, useCallback } from 'react';
-import { Button, Form, Input } from 'antd';
+import { FC, useCallback, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Button, Form, Input, Typography } from 'antd';
 import { Rule } from 'rc-field-form/lib/interface';
 import classNames from 'classnames';
 
@@ -12,21 +13,35 @@ import { initialValuesForm } from '@constants/initialValuesForm';
 import styles from '@styles/forms/RegistrationForm.module.css';
 import buttonsStyle from '@styles/ButtonsStyle.module.css';
 
+interface IRegistrationValues extends IRegistrationUser {
+  repeat: string;
+}
+
 interface IRegistrationForm {
   setUser: (values: IRegistrationUser) => void;
   onClick: (key: string) => void;
 }
 
 const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
+  const registration_error = useSelector(state => state.user.error.registration)
+  const user = useSelector(state => state.user.user)
   const [form] = Form.useForm();
   const onFinish = useCallback(
-    (values: IRegistrationUser): void => {
-      console.log(values)
+    (values: IRegistrationValues): void => {
       setUser(values);
-      onClick('second');
     },
     [setUser, onClick]
   );
+
+  useEffect(() => {
+    if(user && !user.phoneConfirmed) {
+      onClick('second');
+    }
+  }, [user])
+
+  useEffect(() => {
+    console.log(registration_error)
+  }, [registration_error])
 
   return (
     <Form
@@ -41,7 +56,7 @@ const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
       <Form.Item
         className={styles.item}
         label="Имя"
-        name="Имя"
+        name="firstName"
         rules={rulesFields.required}
       >
         <Input className={styles.formItem} />
@@ -49,15 +64,7 @@ const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
       <Form.Item
         className={styles.item}
         label="Фамилия"
-        name="lastName"
-        rules={rulesFields.required}
-      >
-        <Input className={styles.formItem} />
-      </Form.Item>
-      <Form.Item
-        className={styles.item}
-        label="Логин"
-        name="username"
+        name="familyName"
         rules={rulesFields.required}
       >
         <Input className={styles.formItem} />
@@ -66,7 +73,7 @@ const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
         className={styles.item}
         label="e-mail"
         name="email"
-        rules={rulesFields.email as Rule[]}
+        rules={rulesFields.email}
       >
         <Input className={styles.formItem} type="email" />
       </Form.Item>
@@ -90,10 +97,18 @@ const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
         className={styles.item}
         label="пароль ещё раз"
         name="repeat"
-        rules={rulesFields.required}
+        dependencies={['password']}
+        rules={rulesFields.repeat}
       >
         <Input className={styles.formItem} type="password" />
       </Form.Item>
+      {registration_error && (
+        <div className={styles.errorMessage}>
+          <Typography.Text className={styles.errorMessage}>
+            Такая почта уже существует
+          </Typography.Text>
+        </div>
+      )}
       <Form.Item className={styles.buttonsBlock}>
         <Button
           className={classNames(buttonsStyle.defaultButton, styles.buttonNext)}

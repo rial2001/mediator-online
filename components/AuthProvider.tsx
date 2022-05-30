@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { initAppActions } from '@redux/initAppActions';
+import { load } from '@redux/user';
 
 const AuthProvider = ({ children }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(initAppActions.initApp());
+    dispatch(load());
   }, [dispatch]);
 
   return React.Children.only(children);

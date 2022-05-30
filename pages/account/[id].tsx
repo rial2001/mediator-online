@@ -1,5 +1,6 @@
 import { FC, useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
+import Router from 'next/router'
 import { Tabs, Typography } from 'antd';
 import { useDispatch } from 'react-redux';
 import classNames from 'classnames';
@@ -12,15 +13,15 @@ import UserInfo from '@components/account/UserInfo';
 import UserCheck from '@components/account/UserCheck';
 import UserNotification from '@components/account/UserNotification';
 import UserStatistics from '@components/account/UserStatistics';
-import { authAction } from '@redux/auth/authActions';
+import {logout} from '@redux/user';
 import MobileTitleTabs from '@components/account/MobileTitleTabs';
 import Loader from '@components/Loader';
-import { PrivatePage } from '@components/PrivatePage';
+import {appRouters} from '@routers/appRouters'
 
 import styles from '@styles/account/Account.module.css';
 
 const Account: FC = () => {
-  const { user } = useAuth();
+  const {user} = useAuth();
   const dispatch = useDispatch();
 
   const [tabPosition, setTabPosition] = useState<TabPosition>('left');
@@ -31,8 +32,12 @@ const Account: FC = () => {
   };
 
   const logoutHandler = useCallback((): void => {
-    dispatch(authAction.logout());
+    dispatch(logout());
   }, [dispatch]);
+
+  useEffect(() => {
+    if(!user) Router.push(appRouters.home)
+  }, [user])
 
   useEffect(() => {
     if (window.innerWidth <= 640) {
@@ -47,7 +52,7 @@ const Account: FC = () => {
   }
 
   return (
-    <PrivatePage>
+    <>
       <Head>
         <title>Личный кабинет</title>
       </Head>
@@ -111,7 +116,7 @@ const Account: FC = () => {
           </Container>
         </section>
       </Layout>
-    </PrivatePage>
+    </>
   );
 };
 

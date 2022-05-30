@@ -7,9 +7,7 @@ import { Rule } from 'rc-field-form/lib/interface';
 
 import { rulesFields } from '@validations/rulesFields';
 import { appRouters } from '@routers/appRouters';
-import { authAction } from '@redux/auth/authActions';
-import { errorSelector } from '@redux/auth/authSelectors';
-import { authActionTypes } from '@redux/auth/authActionTypes';
+import { login, error as set_error } from '@redux/user';
 
 import buttonsStyle from '@styles/ButtonsStyle.module.css';
 import styles from '@styles/forms/LoginFormStyle.module.css';
@@ -18,21 +16,11 @@ const LoginForm: FC = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const error = useSelector(errorSelector);
-
-  useEffect((): null | any => {
-    return (): { type: authActionTypes } | null => {
-      if (error) {
-        return dispatch(authAction.clearError());
-      }
-
-      return null;
-    };
-  }, [error, dispatch]);
+  const error = useSelector(state => state.user.error.login);
 
   const onFinish = useCallback(
     (values): void => {
-      dispatch(authAction.login(values));
+      dispatch(login(values));
     },
     [dispatch]
   );
@@ -65,7 +53,7 @@ const LoginForm: FC = () => {
       {error && (
         <div className={styles.errorMessage}>
           <Typography.Text className={styles.errorMessage}>
-            {error}
+            Не верная пара логин / пароль
           </Typography.Text>
         </div>
       )}

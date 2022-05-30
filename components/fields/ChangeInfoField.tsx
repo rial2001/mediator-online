@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Button, Input } from 'antd';
 import classNames from 'classnames';
 
-import { userActions } from '@redux/auth/user/userActions';
+import { update } from '@redux/user';
 import useAuth from '@hooks/useAuth';
 
 import buttonStyles from '@styles/ButtonsStyle.module.css';
@@ -94,7 +94,7 @@ const ChangeInfoField: FC<IChangeInfoField> = ({
       const { name } = event.currentTarget;
       const value = userInfo[name];
 
-      dispatch(userActions.changeUserInfo({ [name]: value }));
+      dispatch(update({...user, [name]: value }));
 
       setReadonly({
         ...readonly,

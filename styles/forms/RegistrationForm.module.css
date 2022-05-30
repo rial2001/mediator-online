@@ -108,3 +108,9 @@
         margin-bottom: 20px;
     }
 }
+
+.errorMessage {
+    text-align: center;
+    margin: 0 auto 10px;
+    color: red;
+}

@@ -1,8 +1,9 @@
-import { privateRequestService } from '@services/privateRequestService';
+import axios from 'axios';
+
 import { API_URL } from '@configs/default.json';
+import {hnd} from './handler';
 
 export const workService = {
-  getWorks: () => privateRequestService.get(`${API_URL}/api/work`),
-  openDispute: payload =>
-    privateRequestService.post(`${API_URL}/api/new-dispute`, payload),
+  getWorks: () => axios.get(`${API_URL}/works`),
+  openDispute: dispute => axios.post(`${API_URL}/dispute`, dispute).then(hnd)
 };

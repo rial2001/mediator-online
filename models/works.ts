@@ -9,6 +9,6 @@ export interface IWorks {
   description: string;
   id: string | number;
   members: IMember[];
-  type: string | number;
+  workType: string | number;
   userId: string | number;
 }
