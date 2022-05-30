@@ -6,13 +6,12 @@ import { Button } from 'antd';
 import Layout from '@components/Layout';
 import Container from '@components/Container';
 import CardBlog from '@components/blog/CardBlog';
-import { PrivatePage } from '@components/PrivatePage';
 
 import buttonsStyle from '@styles/ButtonsStyle.module.css';
 import styles from '@styles/blog/Blog.module.css';
 
 const Index: FC = () => (
-  <PrivatePage>
+  <>
     <Head>
       <title>Блог</title>
     </Head>
@@ -36,7 +35,7 @@ const Index: FC = () => (
         </Container>
       </section>
     </Layout>
-  </PrivatePage>
+  </>
 );
 
 export default Index;

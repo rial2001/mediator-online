@@ -4,12 +4,11 @@ import Head from 'next/head';
 import CardBlog from '@components/blog/CardBlog';
 import Layout from '@components/Layout';
 import Container from '@components/Container';
-import { PrivatePage } from '@components/PrivatePage';
 
 import styles from '@styles/blog/BlogPage.module.css';
 
 const PageBlog = () => (
-  <PrivatePage>
+  <>
     <Head>
       <title>Название статьи</title>
     </Head>
@@ -114,7 +113,7 @@ const PageBlog = () => (
         </Container>
       </section>
     </Layout>
-  </PrivatePage>
+  </>
 );
 
 export default PageBlog;

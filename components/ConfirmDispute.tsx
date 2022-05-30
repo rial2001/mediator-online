@@ -14,8 +14,8 @@ interface IConfirmDispute {
 }
 
 const ConfirmDispute: FC<IConfirmDispute> = ({ setShow }) => {
-  const disputeInfo = useSelector(newDisputeSelector);
-  const id = useSelector(state => state.user.user?.id);
+  const disputeInfo = useSelector<any, any>(newDisputeSelector);
+  const id = useSelector<any, any>(state => state.user.user?.id);
   const dispatch = useDispatch();
 
   const confirmHandler = useCallback((): void => {

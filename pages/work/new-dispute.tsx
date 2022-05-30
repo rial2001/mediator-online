@@ -8,14 +8,13 @@ import Layout from '@components/Layout';
 import Container from '@components/Container';
 import NewDisputeForm from '@components/forms/NewDisputeForm';
 import { newDisputeError } from '@redux/work/workSelectors';
-import { PrivatePage } from '@components/PrivatePage';
 import { workActions } from '@redux/work/workActions';
 
 import styles from '@styles/forms/NewDisputeForm.module.css';
 
 const NewDispute: FC = () => {
   const [disable, setDisable] = useState<boolean>(true);
-  const error = useSelector(newDisputeError);
+  const error = useSelector<any, any>(newDisputeError);
   const dispatch = useDispatch();
 
   const [activeKey, setActiveKey] = useState<string>('first');
@@ -29,7 +28,7 @@ const NewDispute: FC = () => {
   }, []);
 
   return (
-    <PrivatePage>
+    <>
       <Head>
         <title>Открытие спора</title>
       </Head>
@@ -62,7 +61,7 @@ const NewDispute: FC = () => {
           </Container>
         </section>
       </Layout>
-    </PrivatePage>
+    </>
   );
 };
 

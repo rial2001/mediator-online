@@ -19,7 +19,7 @@ const Header: FC = () => {
   const [openBurgerMenu, setOpenBurgerMenu] = useState<boolean>(false);
   const [openLoginForm, setOpenLoginForm] = useState<boolean>(false);
   const { isAuth } = useAuth();
-  const user = useSelector(state => state.user.user);
+  const user = useSelector<any, any>(state => state.user.user);
 
   const burgerClickHandler = useCallback((): void => {
     setOpenBurgerMenu(true);

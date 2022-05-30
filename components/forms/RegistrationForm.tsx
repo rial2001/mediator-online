@@ -1,7 +1,6 @@
 import { FC, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Button, Form, Input, Typography } from 'antd';
-import { Rule } from 'rc-field-form/lib/interface';
 import classNames from 'classnames';
 
 import { rulesFields } from '@validations/rulesFields';
@@ -23,8 +22,8 @@ interface IRegistrationForm {
 }
 
 const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
-  const registration_error = useSelector(state => state.user.error.registration)
-  const user = useSelector(state => state.user.user)
+  const registration_error = useSelector<any, any>(state => state.user.error.registration)
+  const user = useSelector<any, any>(state => state.user.user)
   const [form] = Form.useForm();
   const onFinish = useCallback(
     (values: IRegistrationValues): void => {

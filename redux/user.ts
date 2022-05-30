@@ -1,4 +1,4 @@
-import {Dispatch} from 'redux'
+//import {Dispatch} from 'redux'
 import {handleActions} from 'redux-actions'
 import Router from 'next/router'
 
@@ -14,7 +14,7 @@ enum Action {
   ERROR = 'ERROR_USER'
 }
 
-export const set = (user: IUser) => ({payload: user, type: Action.SET})
+export const set = (user: IUser | null) => ({payload: user, type: Action.SET})
 export const begin = () => ({type: Action.BEGIN})
 export const error = err => ({payload: err, type: Action.ERROR})
 

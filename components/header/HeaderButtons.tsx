@@ -16,7 +16,7 @@ interface IHeaderMenuButtons {
 }
 
 const HeaderButtons: FC<IHeaderMenuButtons> = ({ mobile, openLogin }) => {
-  const user = useSelector(state => state.user.user);
+  const user = useSelector<any, any>(state => state.user.user);
   const dispatch = useDispatch();
   const { isAuth } = useAuth();
 

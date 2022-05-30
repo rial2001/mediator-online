@@ -16,7 +16,7 @@ interface IHeaderMenu {
 }
 
 const HeaderMenu: FC<IHeaderMenu> = ({ mobile }) => {
-  const id = useSelector(state => state.user.user?.id);
+  const id = useSelector<any, any>(state => state.user.user?.id);
   const { isAuth } = useAuth();
   const [open, setOpen] = useState(false);
 

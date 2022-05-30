@@ -17,7 +17,7 @@ interface INewDisputeInformation {
 
 const NewDisputeInformation: FC<INewDisputeInformation> = ({ activeTab }) => {
   const dispatch = useDispatch();
-  const dispute = useSelector(newDisputeSelector);
+  const dispute = useSelector<any, any>(newDisputeSelector);
   const router = useRouter();
 
   const openDisputeHandler = useCallback((): void => {

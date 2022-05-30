@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useEffect } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { Button, Form, Input, Typography } from 'antd';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +7,7 @@ import { Rule } from 'rc-field-form/lib/interface';
 
 import { rulesFields } from '@validations/rulesFields';
 import { appRouters } from '@routers/appRouters';
-import { login, error as set_error } from '@redux/user';
+import { login } from '@redux/user';
 
 import buttonsStyle from '@styles/ButtonsStyle.module.css';
 import styles from '@styles/forms/LoginFormStyle.module.css';
@@ -16,7 +16,7 @@ const LoginForm: FC = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const error = useSelector(state => state.user.error.login);
+  const error = useSelector<any, any>(state => state.user.error.login);
 
   const onFinish = useCallback(
     (values): void => {

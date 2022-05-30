@@ -34,7 +34,7 @@ const NewDisputeForm: FC<INewDisputeForm> = ({
   const [rulesEmail, setRulesEmail] = useState<Rule[]>();
 
   const router = useRouter();
-  const initialValues = useSelector(newDisputeSelector);
+  const initialValues = useSelector<any, any>(newDisputeSelector);
 
   const onFinish = useCallback(
     (values: INewDispute): void => {

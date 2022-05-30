@@ -1,20 +1,12 @@
 import { handleActions } from 'redux-actions';
 
 import { workActionTypes } from '@redux/work/workActionTypes';
-import { authActionTypes } from '@redux/auth/authActionTypes';
 
 const initialState = null;
 
 const workReducer = handleActions(
   {
-    [authActionTypes.REGISTRATION_SUCCESS]: (state, action) => ({
-      ...state,
-      finish: [],
-      new: [],
-      process: [],
-    }),
     [workActionTypes.GET_WORK_SUCCESS]: (state, action) => action.payload,
-    [authActionTypes.LOGOUT_SUCCESS]: (state, action) => null,
     [workActionTypes.OPEN_DISPUTE_SUCCESS]: (state, action) => ({
       ...state,
       newDispute: action.payload,
