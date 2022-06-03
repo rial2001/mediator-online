@@ -36,10 +36,6 @@ const Account: FC = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    if(!user) Router.push(appRouters.home)
-  }, [user])
-
-  useEffect(() => {
     if (window.innerWidth <= 640) {
       setTabPosition('top');
     } else {

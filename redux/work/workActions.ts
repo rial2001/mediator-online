@@ -56,6 +56,7 @@ export const workActions = {
   getWork: () => async dispatch => {
     try {
       const response = await workService.getWorks();
+      console.log('works: ', response);
 
       const { work } = response.data;
 
@@ -77,21 +78,7 @@ export const workActions = {
   openDispute: (dispute: INewDispute) => async dispatch => {
     try {
       const response = await workService.openDispute(dispute);
-
-      if (response.data.errorMessage) {
-        await dispatch(
-          workActions.openDisputeFailure(response.data.errorMessage)
-        );
-        await Router.push(appRouters.newDispute);
-      }
-
-      await dispatch(
-        workActions.openDisputeSuccess({
-          ...response.data,
-          isEmail: dispute.isEmail,
-          isMediator: dispute.isMediator,
-        })
-      );
+      await dispatch(workActions.openDisputeSuccess({...dispute, id: response}));
     } catch (error) {
       dispatch(
         errorActions.setError(

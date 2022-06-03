@@ -88,7 +88,7 @@ const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
         className={styles.item}
         label="пароль"
         name="password"
-        rules={rulesFields.required}
+        rules={rulesFields.password}
       >
         <Input className={styles.formItem} type="password" />
       </Form.Item>

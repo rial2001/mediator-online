@@ -56,7 +56,27 @@ export const rulesFields = {
       },
     }),
   ],
+  password: [
+    ({getFieldValue}) => ({
+      validator(rule, value) {
+        const isValid = validationExpression.password.test(value);
+        if (!isValid) {
+          return Promise.reject(new Error('Пароль должен содержать как минимум 6 знаков и как минимум одну букву и одну цифру'));
+        }
+        return Promise.resolve();
+      }
+    })
+  ],
   repeat: [
+    ({getFieldValue}) => ({
+      validator(rule, value) {
+        const isValid = validationExpression.password.test(value);
+        if (!isValid) {
+          return Promise.reject(new Error('Пароль должен содержать как минимум 6 знаков и как минимум одну букву и одну цифру'));
+        }
+        return Promise.resolve();
+      }
+    }),
     ({getFieldValue}) => ({
       validator(rule, value) {
         if(!value || getFieldValue('password') === value) {

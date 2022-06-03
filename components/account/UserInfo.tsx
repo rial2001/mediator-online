@@ -9,9 +9,15 @@ const UserInfo: FC = () => (
   <div className={styles.userInfo}>
     <div className={styles.userInfoBlock}>
       <Typography.Paragraph className={styles.titleInfo}>
-        ФИО
+        Имя
       </Typography.Paragraph>
-      <ChangeInfoField fieldName="name" />
+      <ChangeInfoField fieldName="firstName" />
+    </div>
+    <div className={styles.userInfoBlock}>
+      <Typography.Paragraph className={styles.titleInfo}>
+        Фамилия
+      </Typography.Paragraph>
+      <ChangeInfoField fieldName="familyName" />
     </div>
     <div className={styles.userInfoBlock}>
       <Typography.Paragraph className={styles.titleInfo}>
