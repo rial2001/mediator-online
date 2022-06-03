@@ -1,6 +1,5 @@
 import { FC, useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
-import Router from 'next/router'
 import { Tabs, Typography } from 'antd';
 import { useDispatch } from 'react-redux';
 import classNames from 'classnames';
@@ -16,7 +15,6 @@ import UserStatistics from '@components/account/UserStatistics';
 import {logout} from '@redux/user';
 import MobileTitleTabs from '@components/account/MobileTitleTabs';
 import Loader from '@components/Loader';
-import {appRouters} from '@routers/appRouters'
 
 import styles from '@styles/account/Account.module.css';
 

@@ -77,8 +77,8 @@ export const workActions = {
   }),
   openDispute: (dispute: INewDispute) => async dispatch => {
     try {
-      const response = await workService.openDispute(dispute);
-      await dispatch(workActions.openDisputeSuccess({...dispute, id: response}));
+      await workService.openDispute(dispute);
+      await dispatch(workActions.openDisputeSuccess({...dispute}));
     } catch (error) {
       dispatch(
         errorActions.setError(
