@@ -2,7 +2,6 @@ import { FC, useCallback, useState } from 'react';
 import { Typography } from 'antd';
 import Link from 'next/link';
 import classNames from 'classnames';
-import { useSelector } from 'react-redux';
 
 import HeaderMenu from '@components/header/HeaderMenu';
 import { appRouters } from '@routers/appRouters';

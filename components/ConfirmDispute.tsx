@@ -1,32 +1,23 @@
 import { Button, Typography } from 'antd';
 import { FC, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import { newDisputeSelector } from '@redux/work/workSelectors';
-import { workActions } from '@redux/work/workActions';
 import Loader from '@components/Loader';
 
 import buttonsStyle from '@styles/ButtonsStyle.module.css';
 import styles from '@styles/work/ConfirmDispute.module.css';
 
-interface IConfirmDispute {
-  setShow: (k: boolean) => void;
-}
-
-const ConfirmDispute: FC<IConfirmDispute> = ({ setShow }) => {
-  const disputeInfo = useSelector<any, any>(newDisputeSelector);
+const ConfirmDispute: FC<any> = ({ setShow }) => {
+  const disputeInfo = useSelector<any, any>((state: any) => state.dispute.dispute);
   const id = useSelector<any, any>(state => state.user.user?.id);
-  const dispatch = useDispatch();
 
   const confirmHandler = useCallback((): void => {
-    dispatch(workActions.addDispute(disputeInfo));
     setShow(false);
-  }, [dispatch, setShow, disputeInfo]);
+  }, [setShow, disputeInfo]);
 
   const refuseHandler = useCallback((): void => {
-    dispatch(workActions.refuseDispute(id));
     setShow(false);
-  }, [dispatch, setShow, id]);
+  }, [setShow, id]);
 
   if (!disputeInfo) {
     return <Loader />;
@@ -41,16 +32,6 @@ const ConfirmDispute: FC<IConfirmDispute> = ({ setShow }) => {
       <Typography.Text className={styles.confirmDescription}>
         {disputeInfo.description}
       </Typography.Text>
-      <div className={styles.membersBlock}>
-        {disputeInfo.members.map(member => (
-          <div className={styles.memberItem} key={member.name}>
-            <div className={styles.memberAvatar}>
-              <img alt="avatar" src={member.avatar} />
-            </div>
-            <Typography.Text>{member.name}</Typography.Text>
-          </div>
-        ))}
-      </div>
       <div>
         <Button className={buttonsStyle.primaryButton} onClick={confirmHandler}>
           принять

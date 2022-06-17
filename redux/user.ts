@@ -68,7 +68,7 @@ export const logout = () => async dispatch => {
 export const update = (values: IUserUpdate) => async dispatch => {
   try {
     dispatch(begin())
-    const user = await userService.modifyInfo(values)
+    const user = await userService.updateUser(values)
     dispatch(set(user))
   } catch (err) {
     dispatch(error({update: err}))
@@ -77,7 +77,7 @@ export const update = (values: IUserUpdate) => async dispatch => {
 export const confirmCode = (code: string) => async dispatch => {
   try {
     dispatch(begin())
-    const user = await userService.confirmCode(code)
+    const user = await userService.confirmEmail(code)
     dispatch(set(user))
     await Router.push(`${appRouters.account}/${user.id}`)
   } catch (err) {

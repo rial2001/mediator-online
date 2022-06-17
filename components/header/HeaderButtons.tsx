@@ -1,6 +1,6 @@
 import { FC, useCallback, memo } from 'react';
 import { Menu, Typography } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Link from 'next/link';
 import classNames from 'classnames';
 

@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react';
+import { FC } from 'react';
 import { Typography } from 'antd';
 import useDispute from '@hooks/useDispute';
 

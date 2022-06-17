@@ -8,9 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import FieldMask from '@components/fields/FieldMask';
 import { rulesFields } from '@validations/rulesFields';
 import { maskField } from '@constants/maskField';
-import { newDisputeSelector } from '@redux/work/workSelectors';
 import { initialValuesForm, meetingForm } from '@constants/initialValuesForm';
-import { ICreateDispute } from '@models/disputes';
 import useAuth from '@hooks/useAuth';
 import {create} from '@redux/dispute';
 
@@ -33,14 +31,13 @@ const NewDisputeForm: FC<INewDisputeForm> = ({
   const [disabledEmail, setDisabledEmail] = useState<boolean>();
   const [rulesEmail, setRulesEmail] = useState<Rule[]>();
   const {user} = useAuth();
-  const mediators = useSelector(state => state.mediators.mediators)
+  const mediators = useSelector<any, any>(state => state.mediators.mediators)
 
   const router = useRouter();
   const dispatcher = useDispatch()
 
   const onFinish = useCallback(
-    (values: INewDispute): void => {
-      console.log('user', user)
+    (values: any): void => {
       dispatcher(create({
         ...values,
         userId: user.id,
@@ -54,7 +51,7 @@ const NewDisputeForm: FC<INewDisputeForm> = ({
   );
 
   const onFinishFailed = useCallback(
-    (errorInfo: ValidateErrorEntity<INewDispute>): void => {
+    (errorInfo: ValidateErrorEntity<any>): void => {
       console.log(errorInfo);
       setDisable(true);
     },
@@ -76,7 +73,7 @@ const NewDisputeForm: FC<INewDisputeForm> = ({
   };
 
   const clickChooseMediator = useCallback(() => {
-    const values = form.getFieldsValue();
+    //const values = form.getFieldsValue();
     router.push('/work/choose-mediator');
   }, [router, form]);
 

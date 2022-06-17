@@ -15,7 +15,7 @@ interface IDisputeInfo {
 
 const ChooseMediatorForm: FC<any> = ({onSelect}) => {
   const dispatch = useDispatch();
-  const mediators = useSelector(state => state.mediators.mediators)
+  const mediators = useSelector<any, any>(state => state.mediators.mediators)
 
   const onFinish = useCallback(
     (values: IDisputeInfo): void => {

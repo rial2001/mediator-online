@@ -2,7 +2,6 @@ import { FC, memo } from 'react';
 import { Typography } from 'antd';
 
 import WorkBoardCard from '@components/work/WorkBoardCard';
-import { IDispute } from '@models/disputes';
 import useDispute from '@hooks/useDispute';
 
 import styles from '@styles/work/WorkBoardStyle.module.css';
@@ -24,7 +23,7 @@ const WorkBoardItem: FC<IWorkBoardItem> = ({ type }) => {
 
   return (
     <div className={styles.workBoard}>
-      {disputes.map((dispute: IDispute) => (
+      {disputes.map((dispute: any) => (
         <WorkBoardCard key={`dispute_${dispute.id}`} {...dispute} />
       ))}
     </div>

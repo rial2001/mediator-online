@@ -1,5 +1,4 @@
 import { FC, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Button, Typography } from 'antd';
 import classNames from 'classnames';
 import { useRouter } from 'next/router';

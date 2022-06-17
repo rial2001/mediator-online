@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { Tabs, Typography } from 'antd';
 import Head from 'next/head';
 
@@ -39,7 +39,7 @@ const NewDispute: FC = () => {
                   </Typography.Title>
                   <NewDisputeForm
                     activeTab={changeHandler}
-                    error={null}
+                    error={undefined}
                     setDisable={setDisable}
                   />
                 </Tabs.TabPane>
