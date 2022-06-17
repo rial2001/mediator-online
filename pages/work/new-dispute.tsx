@@ -1,27 +1,17 @@
 import { FC, useCallback, useEffect, useState } from 'react';
 import { Tabs, Typography } from 'antd';
 import Head from 'next/head';
-import { useDispatch, useSelector } from 'react-redux';
 
 import NewDisputeInformation from '@components/work/NewDisputeInformation';
 import Layout from '@components/Layout';
 import Container from '@components/Container';
 import NewDisputeForm from '@components/forms/NewDisputeForm';
-import { newDisputeError } from '@redux/work/workSelectors';
-import { workActions } from '@redux/work/workActions';
 
 import styles from '@styles/forms/NewDisputeForm.module.css';
 
 const NewDispute: FC = () => {
   const [disable, setDisable] = useState<boolean>(true);
-  const error = useSelector<any, any>(newDisputeError);
-  const dispatch = useDispatch();
-
   const [activeKey, setActiveKey] = useState<string>('first');
-
-  useEffect(() => {
-    dispatch(workActions.clearNewDisputeForm());
-  }, []);
 
   const changeHandler = useCallback((key: string) => {
     setActiveKey(key);
@@ -49,7 +39,7 @@ const NewDispute: FC = () => {
                   </Typography.Title>
                   <NewDisputeForm
                     activeTab={changeHandler}
-                    error={error}
+                    error={null}
                     setDisable={setDisable}
                   />
                 </Tabs.TabPane>

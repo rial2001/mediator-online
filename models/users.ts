@@ -1,15 +1,15 @@
 type userType = 'client' | 'mediator';
 
 export interface IUser {
-  id: string | number;
+  id: number;
   email: string;
   firstName: string;
   familyName: string;
   phone: string;
   userType: userType;
-  address: string | undefined;
-  city: string | undefined;
-  timeZone: string | undefined;
+  address?: string;
+  city?: string;
+  timezone?: string;
   statusDispute?: string;
   support?: string;
   statusPay?: string;
@@ -42,4 +42,28 @@ export interface IUserUpdate {
   support?: string;
   statusPay?: string;
   wallet?: string;
+}
+
+export interface IClient {
+  id: number;
+  email: string;
+  firstName: string;
+  familyName: string;
+  phone: string;
+  userType: userType;
+  address?: string;
+  city?: string;
+  timezone?: string;
+}
+
+export interface IMediator {
+  id: number;
+  email: string;
+  firstName: string;
+  familyName: string;
+  phone: string;
+  userType: userType;
+  address?: string;
+  city?: string;
+  timezone?: string;
 }

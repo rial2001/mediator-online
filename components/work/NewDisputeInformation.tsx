@@ -1,34 +1,29 @@
 import { FC, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { newDisputeSelector } from '@redux/work/workSelectors';
 import { Button, Typography } from 'antd';
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
 
-import { workActions } from '@redux/work/workActions';
 import { appRouters } from '@routers/appRouters';
-
 import styles from '@styles/work/NewDisputeInformation.module.css';
 import buttonStyles from '@styles/ButtonsStyle.module.css';
+import useDispute from '@hooks/useDispute'
 
 interface INewDisputeInformation {
   activeTab: (key: string) => void;
 }
 
 const NewDisputeInformation: FC<INewDisputeInformation> = ({ activeTab }) => {
-  const dispatch = useDispatch();
-  const dispute = useSelector<any, any>(newDisputeSelector);
+  const {dispute} = useDispute();
   const router = useRouter();
 
   const openDisputeHandler = useCallback((): void => {
     router.push(appRouters.home);
-    dispatch(workActions.addDispute(dispute));
-  }, [router, dispatch, dispute]);
+  }, [router, dispute]);
 
   const closeDisputeHandler = useCallback((): void => {
     router.push(appRouters.home);
-    dispatch(workActions.closeDispute(dispute));
-  }, [router, dispatch, dispute]);
+  }, [router, dispute]);
 
   return (
     <div className={styles.content}>
@@ -50,7 +45,7 @@ const NewDisputeInformation: FC<INewDisputeInformation> = ({ activeTab }) => {
         </div>
         <div className={classNames(styles.textBlock, styles.textBlockRow)}>
           <Typography.Title level={5}>Вторая сторона</Typography.Title>
-          <Typography.Text>{dispute?.members[1].name}</Typography.Text>
+          <Typography.Text>{dispute?.user.firstName} {dispute?.user.familyName}</Typography.Text>
         </div>
         <div className={classNames(styles.textBlock, styles.textBlockRow)}>
           <Typography.Title level={5}>
@@ -63,9 +58,7 @@ const NewDisputeInformation: FC<INewDisputeInformation> = ({ activeTab }) => {
           <Typography.Title level={5}>
             Форма встречи, сообщения
           </Typography.Title>
-          {dispute?.meetingForm?.map(meet => (
-            <Typography.Text key={meet}>{meet}</Typography.Text>
-          ))}
+          <Typography.Text>Встреча</Typography.Text>
         </div>
       </div>
       <div

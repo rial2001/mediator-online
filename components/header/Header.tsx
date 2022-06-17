@@ -18,8 +18,7 @@ import styles from '@styles/header/HeaderStyle.module.css';
 const Header: FC = () => {
   const [openBurgerMenu, setOpenBurgerMenu] = useState<boolean>(false);
   const [openLoginForm, setOpenLoginForm] = useState<boolean>(false);
-  const { isAuth } = useAuth();
-  const user = useSelector<any, any>(state => state.user.user);
+  const { isAuth, user } = useAuth();
 
   const burgerClickHandler = useCallback((): void => {
     setOpenBurgerMenu(true);

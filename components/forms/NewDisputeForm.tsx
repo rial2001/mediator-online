@@ -8,10 +8,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import FieldMask from '@components/fields/FieldMask';
 import { rulesFields } from '@validations/rulesFields';
 import { maskField } from '@constants/maskField';
-import { workActions } from '@redux/work/workActions';
 import { newDisputeSelector } from '@redux/work/workSelectors';
 import { initialValuesForm, meetingForm } from '@constants/initialValuesForm';
-import { INewDispute } from '@models/dispute';
+import { ICreateDispute } from '@models/disputes';
+import useAuth from '@hooks/useAuth';
+import {create} from '@redux/dispute';
 
 import buttonsStyle from '@styles/ButtonsStyle.module.css';
 import styles from '@styles/forms/NewDisputeForm.module.css';
@@ -28,21 +29,28 @@ const NewDisputeForm: FC<INewDisputeForm> = ({
   setDisable,
 }) => {
   const [form] = Form.useForm();
-  const dispatch = useDispatch();
   const [disabled, setDisabled] = useState<boolean>();
   const [disabledEmail, setDisabledEmail] = useState<boolean>();
   const [rulesEmail, setRulesEmail] = useState<Rule[]>();
+  const {user} = useAuth();
+  const mediators = useSelector(state => state.mediators.mediators)
 
   const router = useRouter();
-  const initialValues = useSelector<any, any>(newDisputeSelector);
+  const dispatcher = useDispatch()
 
   const onFinish = useCallback(
     (values: INewDispute): void => {
-      dispatch(workActions.openDispute(values));
+      console.log('user', user)
+      dispatcher(create({
+        ...values,
+        userId: user.id,
+        mediatorId: mediators[0].id,
+        meetingForm: "some connection"
+      }))
       setDisable(false);
       activeTab('second');
     },
-    [setDisable, activeTab, dispatch]
+    [setDisable, activeTab]
   );
 
   const onFinishFailed = useCallback(
@@ -69,16 +77,14 @@ const NewDisputeForm: FC<INewDisputeForm> = ({
 
   const clickChooseMediator = useCallback(() => {
     const values = form.getFieldsValue();
-
-    dispatch(workActions.openDispute(values));
     router.push('/work/choose-mediator');
-  }, [dispatch, router, form]);
+  }, [router, form]);
 
   return (
     <Form
       className={classNames(styles.form, 'formDispute')}
       form={form}
-      initialValues={{ ...initialValuesForm.newDispute, ...initialValues }}
+      initialValues={{ ...initialValuesForm.newDispute }}
       layout="vertical"
       name="new-dispute"
       onChange={onChangeForm}

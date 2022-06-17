@@ -1,12 +1,11 @@
-//import {Dispatch} from 'redux'
 import {handleActions} from 'redux-actions'
 import Router from 'next/router'
 
-import {initAppService} from '@services/initAppService'
-import {authService} from '@services/authService'
-import {userService} from '@services/userService'
+import {userService} from '@services/user'
 import {IUser, IRegistrationUser, ILogin, IUserUpdate} from '@models/users'
 import {appRouters} from '@routers/appRouters'
+import {load as load_disputes} from '@redux/disputes'
+import {load as load_mediators} from '@redux/mediators'
 
 enum Action {
   SET = 'SET_USER',
@@ -21,18 +20,23 @@ export const error = err => ({payload: err, type: Action.ERROR})
 export const load = () => async dispatch => {
   try {
     dispatch(begin())
-    const user = await initAppService.authUser()
+    const user = await userService.initUser()
     dispatch(set(user))
+    await dispatch(load_disputes())
+    await dispatch(load_mediators())
     if(!user.phoneConfirmed)
       await Router.push(`${appRouters.registration}`)
   } catch (err) {
+    console.log('load', err)
     dispatch(error({load: err}))
   }
 }
 export const registration = (values: IRegistrationUser) => async dispatch => {
   try {
     dispatch(begin())
-    const user = await authService.registration(values)
+    const user = await userService.registration(values)
+    await dispatch(load_disputes())
+    await dispatch(load_mediators())
     dispatch(set(user))
   } catch (err) {
     dispatch(error({registration: err}))
@@ -42,8 +46,10 @@ export const login = (values: ILogin) => async dispatch => {
   const {email, password} = values
   try {
     dispatch(begin())
-    const user = await authService.login(email, password)
+    const user = await userService.login(email, password)
     dispatch(set(user))
+    await dispatch(load_disputes())
+    await dispatch(load_mediators())
     await Router.push(`${appRouters.account}/${user.id}`)
   } catch {
     dispatch(error({login: 'user not exist'}))
@@ -52,7 +58,7 @@ export const login = (values: ILogin) => async dispatch => {
 export const logout = () => async dispatch => {
   try {
     dispatch(begin())
-    await authService.logout()
+    await userService.logout()
     dispatch(set(null))
     await Router.push(appRouters.home)
   } catch (err) {
@@ -71,7 +77,7 @@ export const update = (values: IUserUpdate) => async dispatch => {
 export const confirmCode = (code: string) => async dispatch => {
   try {
     dispatch(begin())
-    const user = await authService.confirmCode(code)
+    const user = await userService.confirmCode(code)
     dispatch(set(user))
     await Router.push(`${appRouters.account}/${user.id}`)
   } catch (err) {

@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { load } from '@redux/user';
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { load } from '@redux/user'
 
 const AuthProvider = ({ children }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(load());
-  }, [dispatch]);
+    dispatch(load())
+  }, [dispatch])
 
-  return React.Children.only(children);
+  return React.Children.only(children)
 };
 
-export default AuthProvider;
+export default AuthProvider

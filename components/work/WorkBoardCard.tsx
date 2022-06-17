@@ -15,9 +15,8 @@ const WorkBoardCard = ({ ...someWork }) => (
       {someWork.description}
     </Typography.Paragraph>
     <div className={styles.membersBlock}>
-      {someWork.members.map((member, index) => (
-        <WorkBoardMember key={index} {...member} />
-      ))}
+        <WorkBoardMember key={`client_${someWork.user.id}`} {...someWork.user} />
+        <WorkBoardMember key={`mediator_${someWork.mediator.id}`} {...someWork.mediator} />
     </div>
     <Link href={appRouters.home}>
       <Typography.Link className={styles.chatLink}>подробнее</Typography.Link>

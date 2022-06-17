@@ -2,8 +2,8 @@ import { FC, memo } from 'react';
 import { Typography } from 'antd';
 
 import WorkBoardCard from '@components/work/WorkBoardCard';
-import useWorkType from '@hooks/useWorkType';
-import { IWorks } from '@models/works';
+import { IDispute } from '@models/disputes';
+import useDispute from '@hooks/useDispute';
 
 import styles from '@styles/work/WorkBoardStyle.module.css';
 
@@ -12,9 +12,9 @@ interface IWorkBoardItem {
 }
 
 const WorkBoardItem: FC<IWorkBoardItem> = ({ type }) => {
-  const work = useWorkType(type);
+  const disputes = useDispute().disputes;
 
-  if (!work?.length) {
+  if (!disputes?.length) {
     return (
       <Typography.Title className={styles.workTitle} level={3}>
         пока у Вас нет новых дел
@@ -24,8 +24,8 @@ const WorkBoardItem: FC<IWorkBoardItem> = ({ type }) => {
 
   return (
     <div className={styles.workBoard}>
-      {work.map((someWork: IWorks) => (
-        <WorkBoardCard key={someWork.id} {...someWork} />
+      {disputes.map((dispute: IDispute) => (
+        <WorkBoardCard key={`dispute_${dispute.id}`} {...dispute} />
       ))}
     </div>
   );
