@@ -1,5 +1,5 @@
 import { FC, memo, useCallback, useState } from 'react';
-import { Button, Checkbox, Form, Input, Typography } from 'antd';
+import { Button, Checkbox, Form, Input, Typography, TreeSelect } from 'antd';
 import classNames from 'classnames';
 import { Rule, ValidateErrorEntity } from 'rc-field-form/lib/interface';
 import { useRouter } from 'next/router';
@@ -14,6 +14,32 @@ import {create} from '@redux/dispute';
 
 import buttonsStyle from '@styles/ButtonsStyle.module.css';
 import styles from '@styles/forms/NewDisputeForm.module.css';
+import categories from '@configs/categories.json';
+
+const { TreeNode } = TreeSelect;
+
+interface CategoryItem {
+  title: string;
+  value: string;
+  items?: Array<CategoryItem>;
+}
+
+const CategoryItemView = (category: CategoryItem) => {
+  if(!category.items) {
+    return (
+      <TreeNode key={category.value} value={category.value} title={category.title} />
+    )
+  }
+  return (
+    <TreeNode key={category.value} value={category.value} title={category.title} selectable={false}>
+      {category.items.map(item => CategoryItemView(item))}
+    </TreeNode>
+  )
+}
+
+const Categories = () => {
+  return categories.map(item => CategoryItemView(item)) 
+}
 
 interface INewDisputeForm {
   setDisable: (boolean) => void;
@@ -95,7 +121,9 @@ const NewDisputeForm: FC<INewDisputeForm> = ({
         name="category"
         rules={rulesFields.required}
       >
-        <Input />
+        <TreeSelect treeDefaultExpandAll style={{border: "1px solid #000000"}}>
+          {Categories()}
+        </TreeSelect>
       </Form.Item>
 
       <Form.Item
