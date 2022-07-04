@@ -77,7 +77,7 @@ export const update = (values: IUserUpdate) => async dispatch => {
 export const confirmCode = (code: string) => async dispatch => {
   try {
     dispatch(begin())
-    const user = await userService.confirmEmail(code)
+    const user = await userService.confirmPhone(code)
     dispatch(set(user))
     await Router.push(`${appRouters.account}/${user.id}`)
   } catch (err) {

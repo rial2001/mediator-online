@@ -27,6 +27,7 @@ const RegistrationForm: FC<IRegistrationForm> = ({ onClick, setUser }) => {
   const [form] = Form.useForm();
   const onFinish = useCallback(
     (values: IRegistrationValues): void => {
+      values.phone = values.phone.replace(/\D/g,'')
       setUser(values);
     },
     [setUser, onClick]
