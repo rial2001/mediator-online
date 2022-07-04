@@ -23,6 +23,7 @@ const findCategory = (category: string): string | null => {
     } else if(cat.value == category) {
       return cat.title
     }
+    return null
   }
 
   const list: Array<CategoryItem> = categories
