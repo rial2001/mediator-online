@@ -43,10 +43,10 @@ export const registration = (values: IRegistrationUser) => async dispatch => {
   }
 }
 export const login = (values: ILogin) => async dispatch => {
-  const {email, password} = values
+  const {phone, password} = values
   try {
     dispatch(begin())
-    const user = await userService.login(email, password)
+    const user = await userService.login(phone, password)
     dispatch(set(user))
     await dispatch(load_disputes())
     await dispatch(load_mediators())
@@ -82,6 +82,26 @@ export const confirmCode = (code: string) => async dispatch => {
     await Router.push(`${appRouters.account}/${user.id}`)
   } catch (err) {
     dispatch(error({update: err}))
+  }
+}
+export const changePassword = (password: string) => async dispatch => {
+  try {
+    dispatch(begin())
+    await userService.changePassword(password)
+  } catch (err) {
+    dispatch(error({password: err}))
+  }
+}
+export const loginByCode = (phone, code) => async dispatch => {
+  try {
+    dispatch(begin())
+    const user = await userService.confirmLoginCode(phone, code)
+    dispatch(set(user))
+    await dispatch(load_disputes())
+    await dispatch(load_mediators())
+    await Router.push(`${appRouters.account}/${user.id}`)
+  } catch {
+    dispatch(error({login: 'user not exist'}))
   }
 }
 

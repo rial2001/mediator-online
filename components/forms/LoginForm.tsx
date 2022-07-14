@@ -3,8 +3,8 @@ import { Button, Form, Input, Typography } from 'antd';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from 'classnames';
-import { Rule } from 'rc-field-form/lib/interface';
 
+import FieldMask from '@components/fields/FieldMask';
 import { rulesFields } from '@validations/rulesFields';
 import { appRouters } from '@routers/appRouters';
 import { login } from '@redux/user';
@@ -20,6 +20,7 @@ const LoginForm: FC = () => {
 
   const onFinish = useCallback(
     (values): void => {
+      values.phone = values.phone.replace(/\D/g,'')
       dispatch(login(values));
     },
     [dispatch]
@@ -33,15 +34,14 @@ const LoginForm: FC = () => {
       requiredMark={false}
       scrollToFirstError
     >
-      <Form.Item
-        className={styles.item}
-        label="логин"
-        name="email"
-        rules={rulesFields.email as Rule[]}
-      >
-        <Input className={styles.formItem} type="email" />
-      </Form.Item>
-
+      <FieldMask
+        className={`${styles.formItem} ${styles.masked}`}
+        label="номер телефона"
+        mask="+7 (999) 999-99-99"
+        name="phone"
+        placeholder="+7 (999) 999-99-99"
+        rules={rulesFields.phone}
+      />
       <Form.Item
         className={styles.item}
         label="пароль"
